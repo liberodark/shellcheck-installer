@@ -22,7 +22,7 @@ distribution=$(cat /etc/*release | grep "PRETTY_NAME" | sed 's/PRETTY_NAME=//g' 
 
 
 install_shellcheck(){
-      scversion="stable" # or "v0.4.7", or "latest"
+      scversion="stable"
       wget -qO- "https://storage.googleapis.com/shellcheck/shellcheck-${scversion?}.linux.x86_64.tar.xz" | tar -xJv
       cp "shellcheck-${scversion}/shellcheck" /usr/bin/
       shellcheck --version
