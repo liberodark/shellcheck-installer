@@ -1,0 +1,2 @@
+# shellcheck-installer
+ShellCheck Installer
