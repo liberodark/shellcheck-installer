@@ -38,23 +38,23 @@ echo "Install ShellCheck ($distribution)"
   if ! command -v shellcheck &> /dev/null; then
 
     if [[ "$distribution" = CentOS || "$distribution" = CentOS || "$distribution" = Red\ Hat || "$distribution" = Suse || "$distribution" = Oracle ]]; then
-      yum install -y xz &> /dev/null
+      yum install -y xz wget &> /dev/null
 
       install_shellcheck || exit
       
     elif [[ "$distribution" = Fedora ]]; then
-      dnf install -y xz &> /dev/null
+      dnf install -y xz wget &> /dev/null
     
       install_shellcheck || exit
     
     elif [[ "$distribution" = Debian || "$distribution" = Ubuntu || "$distribution" = Deepin ]]; then
       apt-get update &> /dev/null
-      apt-get install -y xz-utils --force-yes &> /dev/null
+      apt-get install -y xz-utils wget --force-yes &> /dev/null
     
       install_shellcheck || exit
       
     elif [[ "$distribution" = Manjaro || "$distribution" = Arch\ Linux ]]; then
-      pacman -S xz --noconfirm &> /dev/null
+      pacman -S xz wget --noconfirm &> /dev/null
     
       install_shellcheck || exit
 
